@@ -38,6 +38,7 @@ Definitions
 Requirements
 =========
  * The library should take in a combination of several free space and semi-constrained paths and output a joint trajectory for execution. 
+ * Most robots supported by ROS-Industrial offer a FollowJointTrajectory action interface for both simulation and actual hardware. This is to be taken care of. 
 
 Design Assumptions
 ========= 
