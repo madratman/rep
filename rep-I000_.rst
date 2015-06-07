@@ -26,7 +26,7 @@ Outline
 Abstract
 ========
 
-This REP proposes (a draft procedure) to combine Descartes(semi-constrained) and MoveIt!(free-space) path planning libraries in a ROS package. It is relevant for users who require a motion plan for a combination of both kinds of trajectory segments. This will be adapted in the future if the proposed Descartes ROS msg API is modified. 
+This REP proposes (a draft procedure) to combine Descartes(semi-constrained) and MoveIt!(free-space) path planning libraries in a ROS package. It is relevant for users who require a motion plan for a combination of both kinds of trajectory segments. This will be adapted in the future if the proposed Descartes ROS msg API is modified. The project is code-named Hamilton and the repository is available [here](https://github.com/ros-industrial-consortium/hamilton).
 
 Motivation
 ==========
@@ -38,8 +38,10 @@ Definitions
 Requirements
 =========
  * The library should take in a combination of several free space and semi-constrained paths and output a MoveIt! trajectory for execution. 
+
  * Make the planner user-friendly : inputs should be easy to specify, and change for that matter.  
- * The class should be general and flexible to accomodate possible use cases. This includes the requirement for generating free-space or semi-constrained paths for inputs given as :
+
+ * The library should be general and flexible to accomodate possible use cases. This includes the requirement for generating free-space or semi-constrained paths for inputs given as :
 
     - Poses(EigenSTL::vector_Affine3d object)
 
@@ -53,17 +55,26 @@ Requirements
 
     - Allow user to set names for target poses.
 
-    -Thinking along the lines of MoveIt! now, it is better to ask from the users two fields in each possible case. Tolerances are zero by default, and hence it is a free-space point. 
-    
-    -Functionality for simple curves - line, circle, etc for both types. 
-    
-    -Ask input for velocity at each point/tracjectory segment from each user. 
-    
-    -Ask to specify interpolation type. 
-    
-    -All this to be done in a GUI. Goal/CP position, orientation, velocity, constraints/tolerances. 
-    
-    -Velocity generator methods.   
+    - Thinking along the lines of MoveIt! now, it is better to ask from the users two fields in each possible case. Tolerances are zero by default, and hence it is a free-space point. 
+
+    - Functionality for simple curves - line, circle, etc for both types. 
+
+    - Ask input for velocity at each point/tracjectory segment from each user. 
+
+    - Ask to specify interpolation type. 
+
+    - All this to be done in a GUI. Goal/CP position, orientation, velocity, constraints/tolerances. 
+
+    - Velocity generator methods.   
+
+  * MoveIt! has a lot of other functionalities as well. No one will use Hamilton if we provide only the above functions. 
+
+  * Incorporate Fermi. 
+
+  * Method to create a descartes robot model (as done in the ROS-I training classes for UR5.) Better (or other) options: 
+    - Build over MoveIt! setup assistant. 
+    - Descartes/Hamilton setup assistant. 
+    - Maybe this is overkill, and this can be achieved by ROS plugin lib.(as done in Godel.) 
 
 Design Assumptions
 ========= 
