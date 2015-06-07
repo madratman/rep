@@ -40,19 +40,30 @@ Requirements
  * The library should take in a combination of several free space and semi-constrained paths and output a MoveIt! trajectory for execution. 
  * Make the planner user-friendly : inputs should be easy to specify, and change for that matter.  
  * The class should be general and flexible to accomodate possible use cases. This includes the requirement for generating free-space or semi-constrained paths for inputs given as :
-    ** Poses(EigenSTL::vector_Affine3d object)
-    ** Semi-constrained Points(descartes_trajectory::CartTrajectoryPt or AxialSymmetricPt or JointTrajectoryPt)
-    ** Add current pose(in RViz) as a free space or semi-constrained(ask user for the tolerances or axial symmetric axes and relevant descretizations)
-    ** Method to append descartes_core::TrajectoryPtPtr for tool pose using seed pose (a member variable) and translation and orientation offsets(inputs from user).  
-    ** There are a lot of possible constructors for creating descartes_trajectory points and moveit. Use inherited classes.
-    ** Allow user to set names for target poses.
 
-    **Thinking along the lines of MoveIt! now, it is better to ask from the users two fields in each possible case. Tolerances are zero by default, and hence it is a free-space point. 
-    **Functionality for simple curves - line, circle, etc for both types. 
-    **Ask input for velocity at each point/tracjectory segment from each user. 
-    **Ask to specify interpolation type. 
-    **All this to be done in a GUI. Goal/CP position, orientation, velocity, constraints/tolerances. 
-    **Velocity generator methods.   
+    - Poses(EigenSTL::vector_Affine3d object)
+
+    - Semi-constrained Points(descartes_trajectory::CartTrajectoryPt or AxialSymmetricPt or JointTrajectoryPt)
+
+    - Add current pose(in RViz) as a free space or semi-constrained(ask user for the tolerances or axial symmetric axes and relevant descretizations)
+
+    - Method to append descartes_core::TrajectoryPtPtr for tool pose using seed pose (a member variable) and translation and orientation offsets(inputs from user).  
+
+    - There are a lot of possible constructors for creating descartes_trajectory points and moveit. Use inherited classes.
+
+    - Allow user to set names for target poses.
+
+    -Thinking along the lines of MoveIt! now, it is better to ask from the users two fields in each possible case. Tolerances are zero by default, and hence it is a free-space point. 
+    
+    -Functionality for simple curves - line, circle, etc for both types. 
+    
+    -Ask input for velocity at each point/tracjectory segment from each user. 
+    
+    -Ask to specify interpolation type. 
+    
+    -All this to be done in a GUI. Goal/CP position, orientation, velocity, constraints/tolerances. 
+    
+    -Velocity generator methods.   
 
 Design Assumptions
 ========= 
