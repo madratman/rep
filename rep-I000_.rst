@@ -37,11 +37,11 @@ Definitions
 
 Requirements
 =========
- * The library should take in a combination of several free space and semi-constrained paths and output a MoveIt! trajectory for execution. 
+* The library should take in a combination of several free space and semi-constrained paths and output a MoveIt! trajectory for execution. 
 
- * Make the planner user-friendly : inputs should be easy to specify, and change for that matter.  
+* Make the planner user-friendly : inputs should be easy to specify, and change for that matter.  
 
- * The library should be general and flexible to accomodate possible use cases. This includes the requirement for generating free-space or semi-constrained paths for inputs given as :
+* The library should be general and flexible to accomodate possible use cases. This includes the requirement for generating free-space or semi-constrained paths for inputs given as :
 
     - Poses(EigenSTL::vector_Affine3d object)
 
@@ -67,14 +67,30 @@ Requirements
 
     - Velocity generator methods.   
 
-  * MoveIt! has a lot of other functionalities as well. No one will use Hamilton if we provide only the above functions. 
+* MoveIt! has a lot of other functionalities as well. No one will use Hamilton if we provide only the above functions. 
 
-  * Incorporate Fermi. 
+* Incorporate Fermi. 
 
-  * Method to create a descartes robot model (as done in the ROS-I training classes for UR5.) Better (or other) options: 
+* Method to create a descartes robot model (as done in the ROS-I training classes for UR5.) Better (or other) options: 
+  
     - Build over MoveIt! setup assistant. 
+    
     - Descartes/Hamilton setup assistant. 
+    
     - Maybe this is overkill, and this can be achieved by ROS plugin lib.(as done in Godel.) 
+    
+* Proposed Classes/Namespaces:
+    - HybridPlanner
+    - Constraints (inherited by PosConstraints, OrientationConstraints)
+    - Descartes Process Path, Points(contains Constraints' object as member), Constraints. 
+    - MoveIt! Free Path, Points.
+    - RViz plugins. 
+
+    
+* Look at UT Austin's recent `ControlIt!`_. 
+
+.. _ControlIt!: https://robotcontrolit.com/ 
+
 
 Design Assumptions
 ========= 
