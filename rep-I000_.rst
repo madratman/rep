@@ -51,6 +51,7 @@ Requirements
  - Allow user to set names for target poses.
  - Thinking along the lines of MoveIt! now, it is better to ask from the users two fields in each possible case. Tolerances are zero by default, and hence it is a free-space point. 
  - Functionality for simple curves - line, circle, etc for both types. 
+ - Also provide templates for common tasks - blending from Godel, other FTPs? 
  - Ask input for velocity at each point/tracjectory segment from each user. 
  - Ask to specify interpolation type. 
  - All this to be done in a GUI. Goal/CP position, orientation, velocity, constraints/tolerances. 
