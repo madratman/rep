@@ -67,9 +67,8 @@ Requirements
    - Descartes Process Path, Points(contains Constraints' object as member), Constraints. 
    - MoveIt! Free Path, Points.
    - RViz plugins. 
- - 
+ 
 * Linear interpolator(from Godel::ProcessPathGenerator::addInterpolatedProcessPts)
-=======
  - Constraints (inherited by PosConstraints, OrientationConstraints)
  - Descartes Process Path, Points(contains Constraints' object as member), Constraints. 
  - MoveIt! Free Path, Points.
