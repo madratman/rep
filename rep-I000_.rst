@@ -69,12 +69,14 @@ Requirements
    - RViz plugins. 
  - 
 * Linear interpolator(from Godel::ProcessPathGenerator::addInterpolatedProcessPts)
+=======
+ - Constraints (inherited by PosConstraints, OrientationConstraints)
+ - Descartes Process Path, Points(contains Constraints' object as member), Constraints. 
+ - MoveIt! Free Path, Points.
+ - RViz plugins. 
     
 * Look at UT Austin's recent `ControlIt!`_. 
-
 .. _ControlIt!: https://robotcontrolit.com/ 
-
-
 
 
 Design Assumptions
