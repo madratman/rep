@@ -77,6 +77,11 @@ Requirements
 * Look at UT Austin's recent `ControlIt!`_. 
 .. _ControlIt!: https://robotcontrolit.com/ 
 
+* Interpolators:
+  -Support for Cartesian, Joint and Hybrid points. 
+  -Linear and parabolic to begin with. 
+
+
 
 Design Assumptions
 ========= 
